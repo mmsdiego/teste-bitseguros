@@ -1,0 +1,29 @@
+<form>
+  <input [(ngModel)]="cepInput" [ngModelOptions]="{standalone: true}" placeholder="Digite seu Cep" type="text" maxlength="9">
+  <button (click)="get_cep()" >Buscar</button>
+</form>
+
+<div class="erro" *ngIf="!erroHidden">
+  <p>CEP Inválido</p>
+</div>
+
+<div class="cep-form" *ngIf="!boxHidden">
+  <div class="res">
+    <div class="card">
+      <div class="box">
+        <div class="box-img">
+          <img src="../../../assets/img/map.png" alt="">
+        </div>
+        <div class="box-item">
+          <p class="title">Endereço</p>
+          <p>CEP: {{cep}}</p>
+          <p>Bairro: {{bairro}}</p>
+          <p>Complemento: {{complemento}}</p>
+          <p>Localidade: {{localidade}}</p>
+          <p>Logradouro: {{logradouro}}</p>
+          <p>UF: {{uf}}</p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
