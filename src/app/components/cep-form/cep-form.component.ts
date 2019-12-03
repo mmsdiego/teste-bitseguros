@@ -24,7 +24,7 @@ export class CepFormComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   get_cep() {
-    const apiUrl: string = 'https://viacep.com.br/ws/' + this.cepInput + '/json/';
+    const apiUrl: string = `https://viacep.com.br/ws/${this.cepInput}/json/`;
     this.http.get(apiUrl).subscribe((res) => {
       this.resultBox = res;
       this.cep = this.resultBox.cep;
